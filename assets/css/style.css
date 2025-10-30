@@ -11,12 +11,14 @@ body {
     color: #1a202c;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    padding-left: 30px; /* 给body添加左内边距 */
+    padding-right: 30px; /* 给body添加右内边距 */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px; /* 增加左右边距从20px到40px */
 }
 
 /* Header Styles */
@@ -38,7 +40,7 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px; /* 增加导航栏的左右边距 */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -786,6 +788,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding-left: 20px; /* 移动端减少body内边距 */
+        padding-right: 20px;
+    }
+
+    .container {
+        padding: 0 20px; /* 移动端使用较小的边距 */
+    }
+
+    .nav-container {
+        padding: 0 20px; /* 移动端导航栏边距 */
+    }
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
