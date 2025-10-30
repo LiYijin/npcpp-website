@@ -168,6 +168,218 @@ body {
     color: #fbbf24;
 }
 
+/* Hero Actions Section */
+.hero-actions {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.actions-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-action-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-action-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-action-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: height 0.3s ease;
+}
+
+.hero-action-card:hover::before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+.hero-action-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-hero-card::before {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.ide-hero-card::before {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.hero-card-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tutorial-hero-card .hero-card-icon {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+}
+
+.ide-hero-card .hero-card-icon {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+}
+
+.hero-action-card:hover .hero-card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.hero-card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+    line-height: 1.2;
+}
+
+.hero-card-subtitle {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-card-features {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-card-features span {
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    color: #4a5568;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card-arrow {
+    font-size: 2rem;
+    color: #667eea;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.hero-action-card:hover .hero-card-arrow {
+    color: #4299e1;
+    transform: translateX(10px);
+}
+
+/* 增强的英雄区域动画效果 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(72, 187, 120, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0);
+    }
+}
+
+@keyframes pulse-blue {
+    0% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(66, 153, 225, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+    }
+}
+
+.tutorial-hero-card .hero-card-icon {
+    animation: pulse 2s infinite;
+}
+
+.ide-hero-card .hero-card-icon {
+    animation: pulse-blue 2s infinite;
+}
+
+/* 响应式设计 - Hero Actions */
+@media (max-width: 768px) {
+    .actions-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-action-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-action-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-card-content {
+        text-align: center;
+    }
+
+    .hero-card-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .hero-card-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-card-subtitle {
+        font-size: 1rem;
+    }
+}
+
 /* Code Preview */
 .hero-visual {
     position: relative;
