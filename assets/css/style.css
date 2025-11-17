@@ -869,3 +869,20 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* 强制复位 transform/top，避免任何 JS 把 hero 向下平移 */
+.hero,
+.hero *[class*="hero"],
+.hero-content {
+    transform: none !important;
+    -webkit-transform: none !important;
+    top: auto !important;
+    will-change: auto !important;
+}
+
+/* 修复 .reveal 区块默认透明导致内容不显示的问题 */
+.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
