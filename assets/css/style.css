@@ -113,8 +113,8 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 0;
     align-items: center;
     position: relative;
     z-index: 1;
